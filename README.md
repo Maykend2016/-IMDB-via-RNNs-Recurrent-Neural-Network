@@ -14,3 +14,11 @@ As revisões são, portanto, representadas como sequências de comprimento vari�
 
 Mais informações e créditos originais:
 Maas, Andrew L. and Daly, Raymond E. and Pham, Peter T. and Huang, Dan and Ng, Andrew Y. and Potts, Christopher, "Learning Word Vectors for Sentiment Analysis", em Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies, June, 2011. Portland, Oregon, USA. Association for Computational Linguistics. Pages 142 a150. Disponível em: http://www.aclweb.org/anthology/P11-1015
+
+O que foi realizado até o momento?
+
+No pré-processamento a variável nb_words estava com definição = 10000 a cerca do número de palavras, das quais são mais frequentes para se utilizar. Resolvi fazer um teste alterando para 20000 com intuito de cortar os textos a partir do maxlenght = 100 mediante ao seu comprimento máximo de palavras.
+
+Note que na camada de LSTM, foi inserida toda a classe, visto que usei várias ativações, das quais à accuracy encontrava-se entre 78 a 83%, sem nenhum resultado satisfatório.
+
+Para ultrapassar os 83% em nossa análise, foi necessário usar apenas 5 epochs com uma pequena alteração no validation_split com peso definido = 0.1. Assim, chegamos a 84.72% de melhoria.
